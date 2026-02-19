@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 390px;
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  background: linear-gradient(90deg, #67e8f9, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 24px;
+}
+
+.tab {
+  display: none;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.tab.active {
+  display: block;
+}
+
+select, input {
+  width: 100%;
+  background: #020617;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 12px;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+button {
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
+  border: none;
+  color: #020617;
+  font-weight: 600;
+  border-radius: 18px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.exercise {
+  margin-top: 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+
+.exercise-header {
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.exercise-body {
+  padding: 14px;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.exercise.open .exercise-body {
+  display: grid;
+}
+
+#exerciseList {
+    margin: 20 0 0 0px;
+}
+
+.profile-field {
+  margin-bottom: 16px;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 390px;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(20px);
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+nav button {
+  background: none;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+}
+
+nav button.active {
+  color: #67e8f9;
+}
+
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.today-btn {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  grid-auto-rows: 64px; /* ✅ uniform rows */
+}
+
+.calendar-day {
+  background: #020617;
+  border-radius: 14px;
+  padding: 6px;
+  height: 64px; /* ✅ fixed height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  overflow: hidden; /* ✅ contain content */
+}
+
+
+.calendar-day.today {
+  border: 2px solid #22d3ee;
+}
+
+.calendar-day .label {
+  font-size: 10px;
+  margin-top: 4px;
+  color: #67e8f9;
+  white-space: nowrap;        /* ✅ no wrapping */
+  overflow: hidden;           /* ✅ no overflow */
+  text-overflow: ellipsis;    /* ✅ … if too long */
+  max-width: 100%;
+}
+
+
+.day-editor {
+  margin-top: 16px;
+  background: rgba(255,255,255,0.08);
+  padding: 14px;
+  border-radius: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+.danger {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+  margin-top: 8px;
+}
+
+
+#profile-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+#profile-form input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  background: #020617;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 6px;
+}
+
+#profile button {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#editProfileBtn {
+  background: #1e293b;
+  color: white;
+}
+
+#saveProfileBtn {
+  background: #38bdf8;
+  color: black;
+}
+
+#profile-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 14px;
+}
+
+#profile-form input {
+  margin-top: 6px;
+}
+
+.unit {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 6px;
+}
+
+
+#unitToggleBtn {
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin: 0 0 0 20px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  font-size: 12px;
+}

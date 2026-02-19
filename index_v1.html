@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workout Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+  <h1 class="title">Workout Tracker</h1>
+
+  <!-- PLANNER -->
+  <section id="planner" class="tab active">
+    <select id="daySelect"></select>
+
+    <input id="exerciseName" placeholder="Exercise name" />
+
+    <div class="row">
+      <input id="sets" type="number" placeholder="Sets" />
+      <input id="reps" type="number" placeholder="Reps" />
+      <input id="weight" type="number" placeholder="Lbs" />
+    </div>
+
+    <button id="addExercise">Add Exercise</button>
+
+    <div id="exerciseList"></div>
+  </section>
+
+
+  <!-- CALENDAR -->
+<section id="calendar" class="tab">
+  <div class="calendar-header">
+    <button id="prevMonth">◀</button>
+    <h2 id="monthLabel"></h2>
+    <button id="nextMonth">▶</button>
+  </div>
+
+  <button id="todayBtn" class="today-btn">Today</button>
+
+  <div class="calendar-grid" id="calendarGrid"></div>
+
+  <div id="dayEditor" class="day-editor hidden">
+    <h3 id="selectedDateLabel"></h3>
+
+    <select id="dayWorkout">
+      <option value="">— Select workout —</option>
+      <option value="Upper A">Upper A</option>
+      <option value="Upper B">Upper B</option>
+      <option value="Lower A">Lower A</option>
+      <option value="Lower B">Lower B</option>
+      <option value="Volleyball">Volleyball</option>
+      <option value="Rest">Rest Day</option>
+    </select>
+
+    <button id="saveDayWorkout">Save</button>
+    <button id="clearDayWorkout" class="danger">Clear</button>
+  </div>
+</section>
+
+
+  <!-- PROFILE -->
+  <section id="profile" class="tab">
+    <h2>Profile</h2>
+
+    <div class="profile-field">
+      <label>Height</label>
+      <input data-key="height" placeholder="ft / in" />
+    </div>
+
+    <div class="profile-field">
+      <label>Weight (lbs)</label>
+      <input data-key="weight" />
+    </div>
+
+    <div class="profile-field">
+      <label>Standing Reach</label>
+      <input data-key="standingReach" placeholder="ft / in" />
+    </div>
+
+    <div class="profile-field">
+      <label>Vertical Reach</label>
+      <input data-key="verticalReach" placeholder="ft / in" />
+    </div>
+
+    <div class="profile-field">
+      <label>Approach Reach</label>
+      <input data-key="approachReach" placeholder="ft / in" />
+    </div>
+  </section>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav>
+  <button data-tab="planner" class="active">Planner</button>
+  <button data-tab="calendar">Calendar</button>
+  <button data-tab="profile">Profile</button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>
