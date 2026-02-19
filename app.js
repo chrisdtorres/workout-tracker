@@ -339,3 +339,8 @@ updateProfileUnitLabels();     // ✅ updates (ft)/(in)
 
 
 });
+
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+}
